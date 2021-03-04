@@ -1,0 +1,163 @@
+@charset 'utf-8';
+
+html{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+}
+
+body{
+    overflow-x: hidden;
+    color: rgb(29,29,31);
+    letter-spacing: -0.05em;
+    background:white;
+    padding: 0 1rem;
+}
+
+p{
+    line-height: 1.6;
+}
+
+a{
+    color: rgb(29,29,31);
+    text-decoration: none;
+}
+
+.global-nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    padding: 0 1rem;
+}
+
+.local-nav{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 1rem;
+}
+
+.global-nav-links, .local-nav-links{
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.global-nav-links{
+    justify-content: space-between;
+}
+/*not: 원하지 않는 내용 빼기*/
+.local-nav-links a:not(.product-name){ 
+    margin-left: 2em;
+    font-size: 0.8rem;
+}
+/*부모가 붙은 클래스 코드가 단독 클래스보다 우선순위
+ex) ID가 class보다 더 우선 순위*/
+.product-name{
+    font-size: 1.2rem;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.scroll-section{
+    padding-top: 50vh;
+}
+
+#scroll-section-0{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.main-message{
+    display: flex;
+    align-items: center; /*align:세로 정렬, justify: 가로 정렬*/
+    justify-content: center;
+    margin: 5px 0;
+    height: 3em;
+    font-size: 2rem;
+}
+.main-message p{
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.main-message small{
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+}
+
+#scroll-section-2 .main-message{
+    font-size: 3.5rem;
+}
+
+.description{
+    font-size: 1.2rem;
+    color: #888;
+    text-align: justify;
+}
+
+.description strong{
+    display: block;
+    font-size: 2.5rem;
+    color: rgb(29,29,31);
+}
+
+.desc-message{
+    width: 50%;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.pin{
+    width: 1px;
+    height: 100px;
+    background: rgb(29,29,31);
+}
+.sticky-elem{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#show-scene-0 #scroll-section-0 .sticky-elem
+#show-scene-1 #scroll-section-1 .sticky-elem
+#show-scene-2 #scroll-section-2 .sticky-elem
+#show-scene-3 #scroll-section-3 .sticky-elem{
+    display: block;
+}
+
+@media (min-width: 1024px){
+    #scroll-section-0 h1{
+        font-size: 5vw;
+    }
+    .main-message{
+        font-size: 4vw;
+    }
+    .description{
+        max-width: 50%;
+        margin: 0 auto;
+        font-size: 2.2rem;
+    }
+    .description strong{
+        font-size: 5rem;
+    }
+    #scroll-section-2 .main-message{
+        font-size: 6vw;
+    }
+    .main-message small{
+        font-size: 1.5vw;
+    }
+    .desc-message{
+        width: 20%;
+    }
+}
